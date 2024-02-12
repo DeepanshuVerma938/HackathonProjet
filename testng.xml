@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.testRunner.testNG"/>
+      <class name="com.featuredNews.testRunner.testNGRun"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
