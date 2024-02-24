@@ -1,1 +1,1 @@
-file:Features/featuredNewsInformation.feature:15
+file:Features/IsuranceRegression.feature:18:19:24

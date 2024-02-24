@@ -1,0 +1,46 @@
+Feature: categorizing the features as smoke
+
+  @smoke
+  Scenario: Navigating the url of policybazaar
+    Given user navigate to the policybazaar url
+    When user click on travel insurance icon
+    And user should navigate to travel.policybazaar webpage
+
+  @smoke
+  Scenario: Scrolling functionality
+    Given user navigate to policybazaar site
+    Then user should navigated to policybazaar site
+    When user scroll to bottom of webpage
+    Then user should reached to bottom of webpage
+    When click on contact us link
+    Then contact us link should be clickable and navigated to my accoount
+
+  @smoke
+  Scenario: Log in functionality with invalid phonenumber
+    Given user navigate to contact us page of policy bazaar
+    Then user should navigated to policybazaar site & able to click on contact us
+    When user click on login button
+    Then user should navigated to my account webpage
+    When enter invalid phone number
+    Then User has entered wrong number & capture error message
+    When click on log in button
+    Then user should not able to log in
+    
+   @smoke
+   Scenario: Log in functionality with valid phonenumber
+    Given user navigate to contact us page of policy bazaar
+    Then user should navigated to policybazaar site & able to click on contact us
+    When user click on login button
+    Then user should navigated to my account webpage
+    When enter valid phone number
+    Then User has entered valid number 
+    When click on log in button 
+    Then user should be able to log in with correct otp
+    
+   
+   
+
+
+   
+   
+   
