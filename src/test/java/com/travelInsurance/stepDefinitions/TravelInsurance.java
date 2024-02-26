@@ -1,5 +1,7 @@
 package com.travelInsurance.stepDefinitions;
 
+import java.io.IOException;
+
 import com.Insurance.PageObjects.TravelPage;
 import com.Insurance.factory.BaseClass;
 
@@ -75,7 +77,7 @@ public class TravelInsurance {
 	}
 
 	@Then("lowest three travel insurance for students is captured.")
-	public void lowest_three_travel_insurance_for_students_is_captured() {
+	public void lowest_three_travel_insurance_for_students_is_captured() throws IOException {
 		tp.displayPolicies();
 	}
 

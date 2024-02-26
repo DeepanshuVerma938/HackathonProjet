@@ -7,10 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {
-		".//Features/IsuranceRegression.feature" }, glue = "com.travelInsurance.stepDefinitions", plugin = { "pretty",
-				"html:reports/myreport.html", "rerun:target/rerun.txt",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, dryRun = false, monochrome = true)
+@CucumberOptions(features = { ".//Features/EToE.feature" }, glue = "com.travelInsurance.stepDefinitions", plugin = {
+		"pretty", "html:reports/myreport.html", "rerun:target/rerun.txt",
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, dryRun = false, monochrome = true)
 public class testRun extends AbstractTestNGCucumberTests {
 
 }

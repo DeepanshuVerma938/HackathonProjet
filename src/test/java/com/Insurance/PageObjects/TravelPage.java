@@ -251,9 +251,12 @@ public class TravelPage extends BasePage {
 
 	}
 
-	public void displayPolicies() {
+	public void displayPolicies() throws IOException {
 
 		System.out.println("\nAll Travel Policy are displayed below :");
+		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 0);
+		excelUtils.fillBlueColor(fileName, "Sheet1", 0, 1);
+		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 2);
 
 		for (int i = 0; i < 3; i++) {
 

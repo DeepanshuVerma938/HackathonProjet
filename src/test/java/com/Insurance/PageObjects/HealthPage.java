@@ -79,7 +79,7 @@ public class HealthPage extends BasePage {
 	@FindBy(xpath = "//div[@id='errorHighlight']")
 	WebElement txt;
 
-	String fileName = System.getProperty("user.dir") + "/src/test/resources/InsurancePolicies.xlsx";
+	String path = System.getProperty("user.dir") + "/src/test/resources/InsurancePolicies.xlsx";
 
 	public void getHealthInsurance() {
 
@@ -158,7 +158,9 @@ public class HealthPage extends BasePage {
 
 	}
 
-	public void displayHealthPlans() {
+	public void displayHealthPlans() throws IOException {
+		excelUtils.fillGreenColor(path, "Sheet2", 0, 0);
+		excelUtils.fillBlueColor(path, "Sheet2", 0, 1);
 		System.out.println("Health Policy names:");
 		System.out.println("------------------------------------------------------");
 		for (int i = 0; i < 5; i++) {
@@ -166,10 +168,10 @@ public class HealthPage extends BasePage {
 			try {
 				String pname = policyName.get(i).getText();
 				System.out.println("\n" + pname);
-				excelUtils.setCellData(fileName, "Sheet2", i + 1, 0, pname);
+				excelUtils.setCellData(path, "Sheet2", i + 1, 0, pname);
 				String pprice = policyPrice.get(i).getText();
 				System.out.println(pprice);
-				excelUtils.setCellData(fileName, "Sheet2", i + 1, 0, pprice);
+				excelUtils.setCellData(path, "Sheet2", i + 1, 1, pprice);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

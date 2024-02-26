@@ -1,5 +1,7 @@
 package com.travelInsurance.stepDefinitions;
 
+import java.io.IOException;
+
 import com.Insurance.PageObjects.HealthPage;
 import com.Insurance.factory.BaseClass;
 
@@ -54,7 +56,7 @@ public class HealthInsurance {
 	}
 
 	@Then("user should capture and display different health plans")
-	public void user_should_capture_and_display_different_health_plans() {
+	public void user_should_capture_and_display_different_health_plans() throws IOException {
 		hp.displayHealthPlans();
 	}
 }
