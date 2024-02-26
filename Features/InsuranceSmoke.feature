@@ -5,6 +5,25 @@ Feature: categorizing the features as smoke
     Given user navigates to policybazaar site
     When user clicked on travel icon
     Then user should navigate to travelpolicybazaar webpage
+    
+  @smoke
+  Scenario: Navigating to health insurance page
+    Given user navigates to policybazaar site
+    When user clicked on heart logo icon
+    Then user  navigate to healthInsurance webpage
+    
+    
+  @smoke
+  Scenario: Navigating to CarInsurance page
+    Given user navigates to policybazaar site
+    When user clicked on CarImage present on homepage
+    Then user  navigates to carInsurance webpage
+    
+  @smoke
+  Scenario: Navigating the url of policybazaar
+    Given user navigates to policybazaar site
+    When user clicked on travel icon
+    Then user should navigate to travelpolicybazaar webpage
 
   @smoke
   Scenario: Scrolling functionality
@@ -25,6 +44,9 @@ Feature: categorizing the features as smoke
     | mobile    |
     | 97896876  |
     |9876543209 |
+    
+    
+    
     
     
     

@@ -2,10 +2,30 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-23T10:40:51 IST" name="Suite" finished-at="2024-02-23T10:40:51 IST" duration-ms="48">
+  <suite started-at="2024-02-26T13:05:17 IST" name="Suite" finished-at="2024-02-26T13:05:18 IST" duration-ms="807">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.Insurance.testRunner.testRun@5fb759d6]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-23T10:40:51 IST" name="Test" finished-at="2024-02-23T10:40:51 IST" duration-ms="48">
+    <test started-at="2024-02-26T13:05:17 IST" name="Test" finished-at="2024-02-26T13:05:18 IST" duration-ms="807">
+      <class name="com.Insurance.testRunner.testRun">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.Insurance.testRunner.testRun@5fb759d6]" started-at="2024-02-26T13:05:17 IST" name="setUpClass" finished-at="2024-02-26T13:05:17 IST" duration-ms="662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4b41e4dd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.Insurance.testRunner.testRun@5fb759d6]" started-at="2024-02-26T13:05:18 IST" name="tearDownClass" finished-at="2024-02-26T13:05:18 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.Insurance.testRunner.testRun -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
