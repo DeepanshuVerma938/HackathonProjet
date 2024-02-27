@@ -65,7 +65,6 @@ public class loginPage extends BasePage {
 
 	public void clickLoginBtn() {
 		loginbtn.click();
-
 	}
 
 	public void getMessage() {

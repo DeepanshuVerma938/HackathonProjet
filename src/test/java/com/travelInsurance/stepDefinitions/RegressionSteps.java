@@ -3,6 +3,7 @@ package com.travelInsurance.stepDefinitions;
 import com.Insurance.PageObjects.CarPage;
 import com.Insurance.PageObjects.HealthPage;
 import com.Insurance.PageObjects.RegressionPage;
+import com.Insurance.PageObjects.SmokePage;
 import com.Insurance.factory.BaseClass;
 
 import io.cucumber.java.en.Given;
@@ -14,6 +15,7 @@ public class RegressionSteps {
 	CarPage cp;
 	HealthPage hp;
 	RegressionPage rp;
+	SmokePage sp;
 
 	@Given("user navigates to car insurance page")
 	public void user_navigates_to_car_insurance_page() {
@@ -32,7 +34,7 @@ public class RegressionSteps {
 	}
 
 	@Given("user is on please fill your details page")
-	public void user_is_on_please_fill_your_details_page() {
+	public void user_is_on_please_fill_your_details_page() throws InterruptedException {
 		cp = new CarPage(BaseClass.getDriver());
 		cp.getCarInsurance();
 		cp.buyCar();
@@ -51,8 +53,9 @@ public class RegressionSteps {
 		cp.setInfo(string, string2);
 	}
 
-	@Then("user should able to get error")
-	public void user_should_able_to_get_error() {
+	@Then("user should able to capture the error message")
+	public void user_should_able_to_capture_the_error_message() {
+
 		cp.captureMSG();
 	}
 
@@ -67,8 +70,9 @@ public class RegressionSteps {
 		hp.getChild();
 	}
 
-	@Then("user should capture error message")
-	public void user_should_able_to_capture_error_message() {
+	@Then("user should able to get error")
+	public void user_should_able_to_get_error() {
+
 		hp.captureText();
 	}
 
@@ -88,4 +92,62 @@ public class RegressionSteps {
 		rp.captureMessage();
 	}
 
+	@Given("user navigates to child savings insurance page")
+	public void user_navigates_to_child_savings_insurance_page() {
+		sp = new SmokePage(BaseClass.getDriver());
+		sp.clickChild();
+
+	}
+
+	@When("user enters name and invalid number")
+	public void user_enters_name_and_invalid_number() {
+		sp.setNameMo();
+	}
+
+	@Then("user should not allowed to proceed")
+	public void user_should_not_allowed_to_proceed() {
+		sp.childViewPlan();
+	}
+
+	@Given("user navigates to Retirement plan insurance page")
+	public void user_navigates_to_retirement_plan_insurance_page() {
+		sp = new SmokePage(BaseClass.getDriver());
+		sp.clickRetire();
+	}
+
+	@When("user fills invalid name and invalid number")
+	public void user_fills_invalid_name_and_invalid_number() {
+		sp.setNameMo();
+	}
+
+	@Then("user able to view error message")
+	public void user_able_to_view_error_message() {
+		sp.getRetireError();
+	}
+
+	@Given("user navigates to Home Insurance plan page")
+	public void user_navigates_to_home_insurance_plan_page() {
+		sp = new SmokePage(BaseClass.getDriver());
+		sp.homelogo();
+	}
+
+	@When("user gives name and number as invalid")
+	public void user_gives_name_and_number_as_invalid() {
+		sp.setInvalidNameMo();
+	}
+
+	@Then("user must see the invalid message")
+	public void user_must_see_the_invalid_message() {
+		sp.getHomeError();
+	}
+
+	@When("clicked on view plan & continue with this number")
+	public void clicked_on_view_plan_continue_with_this_number() {
+		sp.clickhomeplan();
+	}
+
+	@Then("user user should not navigated to external page")
+	public void user_user_should_not_navigated_to_external_page() {
+		sp.homeplanpage();
+	}
 }

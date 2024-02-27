@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.Insurance.factory.BaseClass;
 
-import io.cucumber.java.AfterAll;
+import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -33,7 +33,7 @@ public class Hooks {
 	}
 
 	// This method runs after all scenarios
-	@AfterAll
+	@After
 	public static void tearDown() {
 
 		driver.quit(); // closing all the browser windows

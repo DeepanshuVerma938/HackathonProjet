@@ -13,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.Insurance.utils.excelUtils;
 
@@ -79,7 +80,14 @@ public class HealthPage extends BasePage {
 	@FindBy(xpath = "//div[@id='errorHighlight']")
 	WebElement txt;
 
-	String path = System.getProperty("user.dir") + "/src/test/resources/InsurancePolicies.xlsx";
+	@FindBy(xpath = "//div[2]/section/div[2]/a")
+	WebElement heart;
+
+	@FindBy(xpath = "//h1[@class='anim firstStep']")
+	WebElement heading;
+
+	String path = System.getProperty("user.dir") + "/src/test/resources/Policy.xlsx";
+	String actualheading = "Find top plans for you with up to ";
 
 	public void getHealthInsurance() {
 
@@ -159,19 +167,19 @@ public class HealthPage extends BasePage {
 	}
 
 	public void displayHealthPlans() throws IOException {
-		excelUtils.fillGreenColor(path, "Sheet2", 0, 0);
-		excelUtils.fillBlueColor(path, "Sheet2", 0, 1);
+//		excelUtils.fillGreenColor(path, "Sheet2", 0, 0);
+//		excelUtils.fillBlueColor(path, "Sheet2", 0, 1);
 		System.out.println("Health Policy names:");
 		System.out.println("------------------------------------------------------");
 		for (int i = 0; i < 5; i++) {
 
 			try {
-				String pname = policyName.get(i).getText();
-				System.out.println("\n" + pname);
-				excelUtils.setCellData(path, "Sheet2", i + 1, 0, pname);
+//				String pname = policyName.get(i).getText();
+//				System.out.println("\n" + pname);
+//				excelUtils.setCellData(path, "Sheet2", i + 1, 0, pname);
 				String pprice = policyPrice.get(i).getText();
 				System.out.println(pprice);
-				excelUtils.setCellData(path, "Sheet2", i + 1, 1, pprice);
+				excelUtils.setCellData(path, "Sheet2", i + 1, 0, pprice);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -193,6 +201,19 @@ public class HealthPage extends BasePage {
 		} catch (Exception e) {
 			System.out.println("Please select parent also");
 		}
+
+	}
+
+	public void clickheartlogo() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[2]/section/div[2]/a")));
+
+		heart.click();
+	}
+
+	public void checkhealthpage() {
+		String expectedheading = heading.getText();
+		Assert.assertEquals(actualheading, expectedheading);
 
 	}
 

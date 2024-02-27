@@ -80,7 +80,7 @@ public class TravelPage extends BasePage {
 	@FindBy(xpath = "//span[@class='slider round']")
 	WebElement watsp;
 
-	@FindBy(xpath = "//button[@class='travel_main_cta']")
+	@FindBy(xpath = "//*[@id='prequote-wrapper']/div[2]/div/div[2]/div/button")
 	WebElement viewPlans;
 
 	@FindBy(xpath = "//label[@for='studentTrip']")
@@ -113,7 +113,7 @@ public class TravelPage extends BasePage {
 	@FindBy(xpath = "//span[@class='premiumPlanPrice']")
 	List<WebElement> planPrice;
 
-	String fileName = System.getProperty("user.dir") + "/src/test/resources/InsurancePolicies.xlsx";
+	String fileName = System.getProperty("user.dir") + "/src/test/resources/Policy.xlsx";
 
 	public void clickTravelIcon() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
@@ -159,7 +159,7 @@ public class TravelPage extends BasePage {
 
 		dateInput.click();
 
-		System.out.println(startmonth.getText());
+		// System.out.println(startmonth.getText());
 
 		if (startmonth.getText().contains("February")) {
 			for (int i = 0; i < startdate.size(); i++) {
@@ -217,6 +217,7 @@ public class TravelPage extends BasePage {
 		// uncheck Whatsapp Updates
 		watsp.click();
 		// click on view plans
+
 		viewPlans.click();
 	}
 
@@ -225,8 +226,8 @@ public class TravelPage extends BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		studentPlan.click();
 
-//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='modal-root']/div/div/span")));
-//		driver.findElement(By.xpath("//*[@id='modal-root']/div/div/span")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='modal-root']/div/div/span")));
+		driver.findElement(By.xpath("//*[@id='modal-root']/div/div/span")).click();
 
 		checkTraveller1.click();
 		checkTraveller2.click();
@@ -254,9 +255,9 @@ public class TravelPage extends BasePage {
 	public void displayPolicies() throws IOException {
 
 		System.out.println("\nAll Travel Policy are displayed below :");
-		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 0);
-		excelUtils.fillBlueColor(fileName, "Sheet1", 0, 1);
-		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 2);
+//		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 0);
+//		excelUtils.fillBlueColor(fileName, "Sheet1", 0, 1);
+//		excelUtils.fillGreenColor(fileName, "Sheet1", 0, 2);
 
 		for (int i = 0; i < 3; i++) {
 

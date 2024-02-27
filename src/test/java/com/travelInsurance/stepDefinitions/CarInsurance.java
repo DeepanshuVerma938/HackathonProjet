@@ -16,7 +16,7 @@ public class CarInsurance {
 	}
 
 	@When("user click on car insurance and redirected to cipolicybazaar webpage")
-	public void user_click_on_car_insurance_and_redirected_to_cipolicybazaar_webpage() {
+	public void user_click_on_car_insurance_and_redirected_to_cipolicybazaar_webpage() throws InterruptedException {
 		cp.getCarInsurance();
 		cp.buyCar();
 	}
